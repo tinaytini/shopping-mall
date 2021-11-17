@@ -23,7 +23,14 @@ body {
 }
 
 .container {
-    min-width: 1440px;
+    width: 1440px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
 .header {
@@ -188,10 +195,16 @@ body {
 
 .footer {
     position: absolute;
-    min-width: 1440px;
+    width: 1440px;
     background-color: #e7e9ed;
     margin: 0 auto;
     overflow: visible;
+}
+
+@media (max-width: 500px) {
+    .footer {
+        max-width: 100%;
+    }
 }
 
 .footer-content {
@@ -214,7 +227,6 @@ body {
 .copyright {
     color: #919294;
     font-size: 16px;
-    margin: 38px 66px 0;
 }
 
 #check {
@@ -227,9 +239,7 @@ body {
 
 
 
-
-
-@media screen and (min-width: 300px) and (max-width: 900px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
     
 
     .header-title {
@@ -254,8 +264,18 @@ body {
         line-height: 30px;
     }
 
-    input .check {
+    
+
+    label > .fas {
         display: block;
+    }
+
+    input #check:checked label {
+        display: block;
+    }
+
+    * {
+        margin: 5px auto;
     }
 
     .main-bkg_img .bkg-img {
@@ -263,15 +283,15 @@ body {
     }
 
     .bkg-img-mobile {
+        position: relative;
         display: block;
     }
     .square-desc {
         position: absolute;
         width: 332px;
         height: 379px;
-        left: 22px;
-        top: 197px;
-
+        left: 76px;
+        top: 200px;
         background: rgba(255, 255, 255, 0.9);
         box-shadow: -4px 4px 20px rgba(68, 33, 33, 0.25);
     }
@@ -285,7 +305,7 @@ body {
         line-height: 40px;
         letter-spacing: 0.04em;
         width: 270px;
-
+        padding: 56px 0 0 14px;
     }
     .main-text {
         width: 350px;
